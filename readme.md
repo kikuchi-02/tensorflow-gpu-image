@@ -1,5 +1,9 @@
 # tensorflow用のベース環境
 
+docker 19.03.5
+
+python 3.7.5
+
 NVIDIA 440
 
 CUDA 10.0
