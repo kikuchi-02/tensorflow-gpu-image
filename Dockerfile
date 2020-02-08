@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -yq \
 
 
 # python
-WORKDIR /root
+WORKDIR /root/src
 RUN wget https://www.python.org/ftp/python/3.7.5/Python-3.7.5.tgz \
     && tar xzvf Python-3.7.5.tgz
 
@@ -27,3 +27,6 @@ RUN rm -rf Python-3.7.5 Python-3.7.5.tgz
 
 RUN pip3 install --upgrade pip
 RUN pip3 install -r /root/requirements.txt
+
+EXPOSE 8888
+CMD ["jupyter-lab", "--no-browser", "--port=8888", "--ip=0.0.0.0", "--allow-root"]
